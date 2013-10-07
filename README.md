@@ -1,3 +1,16 @@
+## MTK recovery打包命令
+
+         ./unpack-MT65xx.pl recovery.img
+
+         mkdir recovery.img-ramdisk
+         cd recovery.img-ramdisk
+         gzip -dc ../ramdisk-recovery.img | cpio -i
+         cd ..
+
+         ./repack-MT65xx.pl -recovery recovery.img-kernel.img recovery.img-ramdisk new-recovery.img
+
+
+
 # MTK-Tools by Bruno Martins
 ## MT65xx unpack and repack scripts
 
